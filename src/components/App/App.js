@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from '../Form/Form'
+import Greeting from '../Greeting/Greeting'
 
 export default class App extends Component {
   constructor() {
@@ -22,12 +23,7 @@ export default class App extends Component {
         <header className='App-header'>
           <div className='icon'></div>
           <h1>VRAD: NEW NAME COMING SOON</h1>
-          <article className='user-info'>
-            <p>
-              Hello, {this.state.user}. You've chosen {this.state.purpose} as your
-                reason for being here!
-            </p>
-          </article>
+          <Greeting user={this.state.user} purpose={this.state.purpose} />
         </header>
         <Form updateUserInfo={this.updateUserInfo} />
       </main>
