@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Form from '../Form/Form'
-import Greeting from '../Greeting/Greeting'
+import Area from '../Areas/Areas'
 
 export default class App extends Component {
   constructor() {
@@ -23,9 +24,9 @@ export default class App extends Component {
         <header className='App-header'>
           <div className='icon'></div>
           <h1>VRAD: NEW NAME COMING SOON</h1>
-          <Greeting user={this.state.user} purpose={this.state.purpose} />
         </header>
-        <Form updateUserInfo={this.updateUserInfo} />
+        <Route exact path='/' component={Form} />
+        <Route exact path='/areas' component={Area}/>
       </main>
     );
   }
