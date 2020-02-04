@@ -10,14 +10,17 @@ export default class Form extends Component {
   }
 
   handleChange = e => {
-    console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value })
   }
 
   validateUser = e => {
     e.preventDefault();
-    const { updateUserInfo } = this.props;
-    updateUserInfo(this.state.user, this.state.purpose);
+    if(!this.state.user || !this.state.purpose || !this.state.email) {
+      window.alert('You must fill out all fields')
+    } else {
+      const { updateUserInfo } = this.props;
+      updateUserInfo(this.state.user, this.state.purpose);
+    }
   }
 
   render() {
@@ -37,6 +40,7 @@ export default class Form extends Component {
           onChange={this.handleChange}
         />
         <select name='purpose' onChange={this.handleChange}>
+          <option value="">Select one--</option>
           <option value='Vacation'>Vacation</option>
           <option value='Business'>Business</option>
           <option value='Other'>Other</option>
