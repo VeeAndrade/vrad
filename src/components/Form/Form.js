@@ -10,6 +10,7 @@ export default class Form extends Component {
   }
 
   handleChange = e => {
+    console.log(e.target.value);
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -20,7 +21,6 @@ export default class Form extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <form>
         <input
@@ -36,24 +36,11 @@ export default class Form extends Component {
           name='email'
           onChange={this.handleChange}
         />
-        <div className="radio">
-          <label>
-            <input type="radio" value='Vacation' name='purpose' onChange={this.handleChange} />
-            Vacation
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value='Business' name='purpose' onChange={this.handleChange} />
-            Business
-          </label>
-        </div>
-        <div className="radio">
-          <label>
-            <input type="radio" value='Other' name='purpose' onChange={this.handleChange} />
-            Other
-          </label>
-        </div>
+        <select name='purpose' onChange={this.handleChange}>
+          <option value='Vacation'>Vacation</option>
+          <option value='Business'>Business</option>
+          <option value='Other'>Other</option>
+        </select>
         <button onClick={this.validateUser}>
           Log In!
         </button>
