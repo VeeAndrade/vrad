@@ -1,24 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Form from '../Form/Form'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: '',
+      purpose: ''
+    }
+  }
+
+  updateUserInfo = (user, purpose) => {
+    this.setState({ user })
+    this.setState({ purpose })
+  }
+
+  render() {
+    return (
+      <main className='App-main'>
+      <header className='App-header'>
+      <div className='icon'></div>
+      <h1>VRAD: NEW NAME COMING SOON</h1>
+      <article className='user-info'>
+        <p>Hello,
+          <span className='user-name'> {this.state.user}</span>.
+          You've chosen <span className='purpose'>{this.state.purpose} </span>
+            as your reason for being here!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      </article>
       </header>
-    </div>
-  );
-}
+      <Form updateUserInfo={this.updateUserInfo} />
+      </main>
+    );
 
-export default App;
+  }
+}
