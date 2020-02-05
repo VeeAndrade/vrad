@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Form from '../Form/Form'
-import Area from '../Areas/Areas'
+import Areas from '../Areas/Areas'
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       user: '',
-      purpose: ''
+      purpose: '', 
+      areas: '',
+      listings: '',
+      userFavorites: ''
     }
   }
 
@@ -26,7 +29,7 @@ export default class App extends Component {
           <h1>VRAD: NEW NAME COMING SOON</h1>
         </header>
         <Route exact path='/' component={Form} />
-        <Route exact path='/areas' component={Area}/>
+        <Route exact path='/areas' component={Areas}/>
       </main>
     );
   }
