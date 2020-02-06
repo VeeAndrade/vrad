@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Areas from '../Areas/Areas'
+import './Form.css'
 
 
 export default class Form extends Component {
@@ -29,8 +31,9 @@ export default class Form extends Component {
 
   render() {
     return (
-      <form>
+      <form className='user-input-form'>
         <input
+          className='username-input'
           type='text'
           placeholder='Name'
           value={this.state.title}
@@ -38,18 +41,22 @@ export default class Form extends Component {
           onChange={this.handleChange}
         />
         <input
+          className = 'useremail-input'
           type='text'
           placeholder='Email'
           name='email'
           onChange={this.handleChange}
         />
-        <select name='purpose' onChange={this.handleChange}>
+        <section className='purpose-section'>
+        <label className='purpose-label'>Reason for trip: </label>
+        <select name='purpose' className='purpose-selection' onChange={this.handleChange}>
           <option value="">Select one--</option>
           <option value='Vacation'>Vacation</option>
           <option value='Business'>Business</option>
           <option value='Other'>Other</option>
         </select>
-        <Link onClick={this.validateUser} to={{pathname:'/areas', state:{user: this.state.user, purpose: this.state.purpose}}}>
+        </section>
+        <Link className='continue-btn' onClick={this.validateUser} to='/areas'>
           Continue
         </Link>
       </form>
