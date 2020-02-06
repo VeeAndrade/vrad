@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const AreaListing = (areaData) => {
-  // debugger
-  console.log(areaData);
+const AreaListing = (id) => {
   return(
     <article>
       <header>name</header>
-      <button>View This Listing</button>
+      <Link to={`areas/${id}` }>View This Listing</Link>
     </article>
   );
 };
