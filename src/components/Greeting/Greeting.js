@@ -2,7 +2,6 @@ import React from 'react';
 import Form from '../Form/Form'
 
 const Greeting = ({ user, purpose }) => {
-  console.log(user, purpose);
   if(!user || !purpose) {
     return ''
   } else {
