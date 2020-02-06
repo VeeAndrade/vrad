@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import Greeting from '../Greeting/Greeting'
 import AreaCard from '../AreaCard/AreaCard';
+import AreaListing from '../AreaListing/AreaListing';
+let route;
 
 class Areas extends Component {
   constructor() {
@@ -33,17 +35,26 @@ class Areas extends Component {
     })
   }
 
+  getAreaId = (id) => {
+    route = `/areas/${id}`
+  }
+
 displayAreas = () => {
   return this.state.areas.map(area => {
-    return <AreaCard 
-      shortName={area.shortName} 
+    return <AreaCard
+      shortName={area.shortName}
       name={area.area}
       description={area.about}
+      areaId={area.id}
+      key={area.id}
+      getAreaId={this.getAreaId}
+      listings={area.listings}
       />
     })
   }
-  
+
   render() {
+    console.log(this.props);
     if(!this.state.areas) {
       return <h1>Loading...</h1>
     } else {
@@ -53,6 +64,7 @@ displayAreas = () => {
           <Greeting user={this.props.location.state.user} purpose={this.props.location.state.purpose} />
           <h1>Denver Areas</h1>
           {this.displayAreas()}
+          <Route exact path={route} component={AreaListing} />
         </main>
       )
     }
