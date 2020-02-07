@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom';
-import Greeting from '../Greeting/Greeting'
+import { NavLink } from 'react-router-dom';
 import AreaCard from '../AreaCard/AreaCard';
-import AreaListing from '../AreaListing/AreaListing';
 
 
 class Areas extends Component {
@@ -10,6 +8,7 @@ class Areas extends Component {
     super()
     this.state = {
       areas: '',
+      listings: '',
       userFavorites: ''
     }
   }
@@ -17,7 +16,7 @@ class Areas extends Component {
   componentDidMount() {
     this.setState({areas: this.props.areasData})
   }
-  
+
   displayAreas = () => {
     return this.state.areas.map(area => {
       return <AreaCard
@@ -25,12 +24,12 @@ class Areas extends Component {
       name={area.area}
       description={area.about}
       areaId={area.id}
+      listings={area.listings}
       key={area.id}
-      listings={this.props.listingsUpdate}
       />
     })
   }
-  
+
   render() {
     if(!this.state.areas) {
       return <h1>Loading...</h1>
