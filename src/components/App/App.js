@@ -10,8 +10,9 @@ export default class App extends Component {
     super();
     this.state = {
       user: '',
-      purpose: '', 
-      areas: ''
+      purpose: '',
+      areas: '',
+      listings: ''
     }
   }
 
@@ -31,7 +32,13 @@ export default class App extends Component {
           .catch(error => console.log(error))
         })
         Promise.all(areaPromises)
-        .then(areaValues => this.setState({areas: areaValues}))
+        .then(areaValues => {
+          const listingsObj = areaValues.reduce((acc, area) => {
+            acc[area.name] = area.listings
+            return acc
+          }, {})
+          this.setState({areas: areaValues, listings: listingsObj})
+        })
     })
   }
 
@@ -46,7 +53,6 @@ export default class App extends Component {
         <h1>LOADING...</h1>
       )
     } else {
-
     return (
       <main className='App-main'>
         <header className='App-header'>
@@ -58,9 +64,8 @@ export default class App extends Component {
         <Route exact path='/areas/:area_id' render={({match}) => {
           const areaId = match.params.area_id
           const selectedArea = this.state.areas.find(area => area.id === parseInt(areaId))
-          return <AreaListing areaListings={selectedArea.listings} id={areaId}/>
+          return <AreaListing listings={this.state.listings[selectedArea.name]} id={areaId}/>
           }} />
-
       </main>
     )};
   }
