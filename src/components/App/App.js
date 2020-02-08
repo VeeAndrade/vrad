@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Form from '../Form/Form'
 import Areas from '../Areas/Areas'
-import AreaListing from '../AreaListing/AreaListing'
+import AreaListing from '../AreaListing/AreaListing';
+import Listing from '../Listing/Listing';
 
 export default class App extends Component {
   constructor() {
@@ -38,21 +39,37 @@ export default class App extends Component {
             return acc
           }, {})
           this.setState({areas: areaValues, listings: listingsObj})
+          let values = Object.values(this.state.listings)
+          let allListings = []
+          let fetchedListings  = values.map(value => {
+            let individualListing = value.map(areaListings => {
+              fetch('http://localhost:3001' + areaListings)
+              .then(response => response.json())
+              .then(data => {
+                allListings.push(data)
+                this.setState({listings: allListings});
+              })
+            })
+            Promise.all(individualListing)
+            .then(response => response)
+          })
+          Promise.all(fetchedListings)
+          .then(array => array)
         })
-    })
-  }
-
-  updateUserInfo = (user, purpose) => {
-    this.setState({ user })
-    this.setState({ purpose })
-  }
-
-  render() {
-    if (!this.state.areas) {
-      return (
-        <h1>LOADING...</h1>
-      )
-    } else {
+      })
+    }
+    
+    updateUserInfo = (user, purpose) => {
+      this.setState({ user })
+      this.setState({ purpose })
+    }
+    
+    render() {
+      if (!this.state.areas || !this.state.listings.length) {
+        return (
+          <h1>LOADING...</h1>
+          )
+        } else {
     return (
       <main className='App-main'>
         <header className='App-header'>
@@ -61,11 +78,18 @@ export default class App extends Component {
         </header>
         <Route exact path='/' component={Form} />
         <Route exact path='/areas' render={() => <Areas areasData={this.state.areas} />}/>
-        <Route exact path='/areas/:area_id' render={({match}) => {
+        <Route exact path='/areas/:area_id/listings' render={({match}) => {
           const areaId = match.params.area_id
-          const selectedArea = this.state.areas.find(area => area.id === parseInt(areaId))
-          return <AreaListing listings={this.state.listings[selectedArea.name]} id={areaId}/>
+          const filteredListings = this.state.listings.filter(listing => {
+            return listing.area_id === parseInt(areaId)
+          })
+          return <AreaListing listings={filteredListings} id={areaId}/>
           }} />
+        <Route path='/areas/:area_id/listings/:listing_id' render={({match}) => {
+          let matchedListing = this.state.listings.find(listing => parseInt(match.params.listing_id) === listing.listing_id)
+          return <Listing matched={matchedListing} />
+        }
+        }  />
       </main>
     )};
   }
