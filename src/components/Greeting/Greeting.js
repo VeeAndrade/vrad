@@ -1,4 +1,5 @@
 import React from 'react';
+import './Greeting.css';
 
 const Greeting = ({ user, purpose }) => {
   if(!user || !purpose) {
