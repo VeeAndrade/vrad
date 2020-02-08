@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import './AreaCard.css'
 
 const AreaCard = ({shortName, name, description, areaId, listings}) => {
-
-
-
+console.log(listings)
   return(
-    <section>
-      <h3>{name}
-      <p>{shortName}</p>
+    <section className='area-card-section'>
+      <h3 className='area-card-name'>{name}
+      <p className='area-card-shortName'>({shortName})</p>
       </h3>
-      <img src='' alt={`Pictures of a rental in ${shortName}`}/>
-      <aside>{description}<Link listings={listings}
-      to={`/areas/${areaId}`}>View Listings</Link>
+      <img src='https://res.cloudinary.com/simpleview/image/upload/v1476736550/clients/denver/denver_art_museum_night_f3f50e4f-e62b-4fd7-b81c-e08fd97ad0a2.jpg' className='area-card-image' alt={`Pictures of a rental in ${shortName}`}/>
+      <aside className='area-card-description'>{description}<Link className='view-listings-button' listings={listings}
+      to={`/areas/${areaId}/listings`}>View Listings</Link>
       </aside>
     </section>
   )
