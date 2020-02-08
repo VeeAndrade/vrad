@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import AreaCard from '../AreaCard/AreaCard';
-
+import './Areas.css'
 
 class Areas extends Component {
   constructor() {
@@ -21,10 +21,9 @@ class Areas extends Component {
     return this.state.areas.map(area => {
       return <AreaCard
       shortName={area.shortName}
-      name={area.area}
+      name={area.name}
       description={area.about}
       areaId={area.id}
-      listings={area.listings}
       key={area.id}
       />
     })
@@ -35,10 +34,14 @@ class Areas extends Component {
       return <h1>Loading...</h1>
     } else {
       return(
-        <main>
-          <NavLink to='/'>Signout</NavLink>
-          <h1>Denver Areas</h1>
+        <main className='main-areas'>
+          <section className='heading-container-wrapper'>
+            <h2 className='heading'>Denver Areas</h2>
+            <NavLink className='signout-btn' to='/'>Signout</NavLink>
+          </section>
+          <section className='card-container'>
           {this.displayAreas()}
+          </section>
         </main>
       )
     }
