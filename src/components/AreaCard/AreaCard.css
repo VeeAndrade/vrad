@@ -1,0 +1,50 @@
+.area-card-section {
+  border: solid 2px green;
+  height: 90%;
+  width: 90%;
+}
+
+.area-card-name {
+  display: flex;
+  align-items: center;
+  border: solid 2px white;
+  background-color: #fff;
+  color: #007EA7;
+  font-weight: bold;
+  height: 12%;
+  padding-left: 10px;
+  position: absolute;
+  margin-top: 2%;
+  width: 200px;
+  height: 5%;
+}
+
+.area-card-shortName {
+  margin-left: 5px;
+  font-weight: lighter;
+}
+
+.area-card-image{
+  width: 100%;
+  height: 70%;
+}
+
+.area-card-description {
+  background-color: #fff;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  padding-left: 3px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-listings-button {
+  border: solid 2px;
+  background-color: #007EA7;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  width: 250px;
+  height: 50px;
+}
