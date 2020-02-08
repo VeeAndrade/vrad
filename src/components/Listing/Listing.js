@@ -9,7 +9,7 @@ const Listing = (props) => {
     <article>
       <h1>{props.matched.name}</h1>
       <img src='' alt='A picture of the listing' />
-      <button>View Listings Info</button>
+      <button>Favorite</button>
     </article>
   )
   }
