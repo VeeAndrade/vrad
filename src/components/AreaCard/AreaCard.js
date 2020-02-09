@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './AreaCard.css'
 
 const AreaCard = ({shortName, name, description, areaId, listings}) => {
-console.log(listings)
   return(
     <section className='area-card-section'>
       <h3 className='area-card-name'>{name}
