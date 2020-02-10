@@ -5,8 +5,10 @@ import Form from '../Form/Form'
 import Areas from '../Areas/Areas'
 import AreaListing from '../AreaListing/AreaListing';
 import Listing from '../Listing/Listing';
+import ListingsContainer from '../ListingsContainer/ListingsContainer'
 import Greeting from '../Greeting/Greeting';
 import FavoriteListing from '../FavoriteListing/FavoriteListing';
+
 
 export default class App extends Component {
   constructor() {
@@ -93,7 +95,7 @@ export default class App extends Component {
           const filteredListings = this.state.listings.filter(listing => {
             return listing.area_id === parseInt(areaId)
           })
-          return <AreaListing listings={filteredListings} id={areaId}/>
+          return <ListingsContainer listings={filteredListings} id={areaId}/>
           }} />
         <Route exact path='/areas/:area_id/listings/:listing_id' render={({match}) => {
           let matchedListing = this.state.listings.find(listing => parseInt(match.params.listing_id) === listing.listing_id)
