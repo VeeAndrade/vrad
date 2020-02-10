@@ -3,10 +3,12 @@ import React from 'react';
 const FavoriteListing = (props) => {
 
   const findIndexOfFavorite = (favoriteId) => {
-    let favorite = props.userFavorites.find((favorite) => favorite.listing_id === parseInt(favoriteId))
-    let index = props.userFavorites.indexOf(favorite)
-    let changedFavorites = props.userFavorites.splice(index, 1)
-    props.removeFromFavorites(changedFavorites)
+    let fav = props.userFavorites.find((favorite) => {
+      return favorite.listing_id === parseInt(favoriteId)
+    })
+    let index = props.userFavorites.indexOf(fav)
+    props.userFavorites.splice(index, 1)
+    props.removeFromFavorites(props.userFavorites)
   }
 
   if(!props.userFavorites.length){
