@@ -24,7 +24,7 @@ export default class Form extends Component {
     if(!this.state.user || !this.state.purpose || !this.state.email) {
       window.alert('You must fill out all fields')
     } else {
-      this.updateUserInfo(this.state.user, this.state.purpose);
+      this.props.updateUserInfo(this.state.user, this.state.purpose);
     }
   }
 
