@@ -21,9 +21,7 @@ export default class App extends Component {
   }
 
   addToFavorites = (listing) => {
-    console.log(this.state.userFavorites);
     if(!this.state.userFavorites.includes(listing)) {
-      console.log('hello');
       this.setState({ userFavorites: [...this.state.userFavorites, listing] })
     }
   }
@@ -73,7 +71,6 @@ export default class App extends Component {
 
     removeFromFavorites = (newFavorites) => {
       this.setState({userFavorites: newFavorites})
-      console.log(this.state.userFavorites);
     }
 
     render() {
