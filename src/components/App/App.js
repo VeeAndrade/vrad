@@ -97,7 +97,7 @@ export default class App extends Component {
           }} />
         <Route exact path='/areas/:area_id/listings/:listing_id' render={({match}) => {
           let matchedListing = this.state.listings.find(listing => parseInt(match.params.listing_id) === listing.listing_id)
-          return <Listing matched={matchedListing} addToFavorites={this.addToFavorites}/>
+          return <Listing matched={matchedListing} userFavorites={this.state.userFavorites} removeFromFavorites={this.removeFromFavorites} addToFavorites={this.addToFavorites}/>
           }
         }  />
         <Route exact path='/favorites' render={() => <FavoriteListing userFavorites={this.state.userFavorites} removeFromFavorites={this.removeFromFavorites} /> }/>
