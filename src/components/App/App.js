@@ -5,6 +5,8 @@ import Form from '../Form/Form'
 import Areas from '../Areas/Areas'
 import AreaListing from '../AreaListing/AreaListing';
 import Listing from '../Listing/Listing';
+import Greeting from '../Greeting/Greeting';
+import FavoriteListing from '../FavoriteListing/FavoriteListing';
 
 export default class App extends Component {
   constructor() {
@@ -13,7 +15,16 @@ export default class App extends Component {
       user: '',
       purpose: '',
       areas: '',
-      listings: ''
+      listings: '',
+      userFavorites: []
+    }
+  }
+
+  addToFavorites = (listing) => {
+    console.log(this.state.userFavorites);
+    if(!this.state.userFavorites.includes(listing)) {
+      console.log('hello');
+      this.setState({ userFavorites: [...this.state.userFavorites, listing] })
     }
   }
 
@@ -50,24 +61,25 @@ export default class App extends Component {
                 this.setState({listings: allListings});
               })
             })
-            Promise.all(individualListing)
-            .then(response => response)
           })
-          Promise.all(fetchedListings)
-          .then(array => array)
         })
       })
     }
-    
+
     updateUserInfo = (user, purpose) => {
       this.setState({ user })
       this.setState({ purpose })
     }
-    
+
+    removeFromFavorites = (newFavorites) => {
+      this.setState({userFavorites: newFavorites})
+      console.log(this.state.userFavorites);
+    }
+
     render() {
       if (!this.state.areas || !this.state.listings.length) {
         return (
-          <h1>LOADING...</h1>
+          <h1>LOADING . . .</h1>
           )
         } else {
     return (
@@ -76,7 +88,8 @@ export default class App extends Component {
           <div className='icon'></div>
           <h1 className='App-heading'>Denver Endeavours</h1>
         </header>
-        <Route exact path='/' component={Form} />
+        <Greeting user={this.state.user} purpose={this.state.purpose} userFavorites={this.state.userFavorites} />
+        <Route exact path='/' render={() => <Form updateUserInfo={this.updateUserInfo} />} />
         <Route exact path='/areas' render={() => <Areas areasData={this.state.areas} />}/>
         <Route exact path='/areas/:area_id/listings' render={({match}) => {
           const areaId = match.params.area_id
@@ -85,11 +98,12 @@ export default class App extends Component {
           })
           return <AreaListing listings={filteredListings} id={areaId}/>
           }} />
-        <Route path='/areas/:area_id/listings/:listing_id' render={({match}) => {
+        <Route exact path='/areas/:area_id/listings/:listing_id' render={({match}) => {
           let matchedListing = this.state.listings.find(listing => parseInt(match.params.listing_id) === listing.listing_id)
-          return <Listing matched={matchedListing} />
-        }
+          return <Listing matched={matchedListing} addToFavorites={this.addToFavorites}/>
+          }
         }  />
+        <Route exact path='/favorites' render={() => <FavoriteListing userFavorites={this.state.userFavorites} removeFromFavorites={this.removeFromFavorites} /> }/>
       </main>
     )};
   }
