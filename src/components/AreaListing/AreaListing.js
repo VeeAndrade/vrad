@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 
 const AreaListing = ({ listings, id }) => {
   return listings.map(listing => {
-    // console.log(listing)
     return (
       <article key={listing.listing_id}>
-      <header>{listing.name}</header>
-      <img/>
-      <Link to={ `/areas/${id}/listings/${listing.listing_id}` }>View This Listing</Link>
-      
+        <header>{listing.name}</header>
+        <img/>
+        <Link to={ `/areas/${id}/listings/${listing.listing_id}` }>View This Listing</Link>
       </article>
     )
   })
