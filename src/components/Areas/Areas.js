@@ -40,7 +40,7 @@ class Areas extends Component {
             <NavLink className='signout-btn' to='/'>Signout</NavLink>
           </section>
           <section className='card-container'>
-          {this.displayAreas()}
+            {this.displayAreas()}
           </section>
         </main>
       )
