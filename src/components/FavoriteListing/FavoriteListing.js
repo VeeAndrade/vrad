@@ -14,7 +14,6 @@ const FavoriteListing = (props) => {
   if(!props.userFavorites.length){
     return <h1>You have no userFavorites</h1>
   } else {
-    console.log(props);
     return props.userFavorites.map(favorite => {
       return (
         <article>
