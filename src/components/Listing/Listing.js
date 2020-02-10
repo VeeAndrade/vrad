@@ -1,10 +1,28 @@
 import React from 'react'
 
 const Listing = (props) => {
+  const findIndexOfFavorite = (favoriteId) => {
+    if (!props.userFavorites.length) {
+      window.alert('You have no favorites')
+    } else {
+      let fav = props.userFavorites.find((favorite) => {
+        return favorite.listing_id === parseInt(favoriteId)
+      })
+      if (!props.userFavorites.includes(fav)) {
+        window.alert('You do not have that listing in your favorites')
+      } else {
+        let index = props.userFavorites.indexOf(fav)
+        props.userFavorites.splice(index, 1)
+        props.removeFromFavorites(props.userFavorites)
+      }
+    }
+  }
+
   if(!props.matched){
     return <h1>Loading...</h1>
-  } else {
-    console.log(props.matched);
+  } else
+
+  {
     let id = props.matched.listing_id.toString()
     return (
     <article>
@@ -16,47 +34,22 @@ const Listing = (props) => {
       </section>
       <ul><p>This place includes:</p>
         {props.matched.details.features.map(feature => {
-          return (<li>{feature}</li>)
+          return (<li key={feature}>{feature}</li>)
         })}
       </ul>
       <section className='description-section'>
-        <p>{props.matched.address.street}</p>
-        <p>{props.matched.address.zip}</p>
-        <p>{props.matched.details.beds}</p>
-        <p>{props.matched.details.baths}</p>
-        <p>{props.matched.details.cost_per_night}</p>
+        <p>Address: {props.matched.address.street}</p>
+        <p>Zip Code: {props.matched.address.zip}</p>
+        <p>Beds: {props.matched.details.beds}</p>
+        <p>Baths: {props.matched.details.baths}</p>
+        <p>Cost Per Night: ${props.matched.details.cost_per_night}</p>
       </section>
-      <button>Favorite</button>
+      <button onClick={() => props.addToFavorites(props.matched)}>Favorite</button>
+      <button name={parseInt(id)} onClick={(event) => findIndexOfFavorite(event.target.name)}>Remove From Favorites</button>
     </article>
   )
   }
 }
-// Address
-// Number of Bedrooms
-// Number of Bathrooms
-// Cost per Night
-// All pictures of the listing
-// Unique features of the listing
 
-// {listing_id: 744, area_id: 590, name: "Upscale Modern Apartments", address: {…}, details: {…}, …}
-// listing_id: 744
-// area_id: 590
-// name: "Upscale Modern Apartments"
-// address: {street: "2345 Walnut St", zip: 80205}
-// details:
-// neighborhood_id: 5124122
-// superhost: false
-// seller_source: "91jss1"
-// beds: 2
-// baths: 2.5
-// cost_per_night: 299
-// features: (3) ["workout facility", "fireplace", "patio with grill"]
-// __proto__: Object
-// dev_id: "k6h524"
-// area: "rino"
-// db_connect: 233658
-// __proto__: Object
-
-// A button to “Favorite” the listing
 
 export default Listing;
