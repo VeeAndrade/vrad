@@ -1,9 +1,28 @@
 import React from 'react'
 
 const Listing = (props) => {
+  const findIndexOfFavorite = (favoriteId) => {
+    if (!props.userFavorites.length) {
+      window.alert('You have no favorites')
+    } else {
+      let fav = props.userFavorites.find((favorite) => {
+        return favorite.listing_id === parseInt(favoriteId)
+      })
+      if (!props.userFavorites.includes(fav)) {
+        window.alert('You do not have that listing in your favorites')
+      } else {
+        let index = props.userFavorites.indexOf(fav)
+        props.userFavorites.splice(index, 1)
+        props.removeFromFavorites(props.userFavorites)
+      }
+    }
+  }
+
   if(!props.matched){
     return <h1>Loading...</h1>
-  } else {
+  } else
+
+  {
     let id = props.matched.listing_id.toString()
     return (
     <article>
@@ -26,6 +45,7 @@ const Listing = (props) => {
         <p>Cost Per Night: ${props.matched.details.cost_per_night}</p>
       </section>
       <button onClick={() => props.addToFavorites(props.matched)}>Favorite</button>
+      <button name={parseInt(id)} onClick={(event) => findIndexOfFavorite(event.target.name)}>Remove From Favorites</button>
     </article>
   )
   }
