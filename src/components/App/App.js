@@ -7,7 +7,9 @@ import AreaListing from '../AreaListing/AreaListing';
 import Listing from '../Listing/Listing';
 import ListingsContainer from '../ListingsContainer/ListingsContainer'
 import Greeting from '../Greeting/Greeting';
+import Error from '../Error/Error';
 import FavoriteListing from '../FavoriteListing/FavoriteListing';
+import { getAreas, getListings, resolvePromises, getIndividualListings } from '../../apiCalls'
 
 
 export default class App extends Component {
@@ -18,6 +20,7 @@ export default class App extends Component {
       purpose: '',
       areas: '',
       listings: '',
+      error: false,
       userFavorites: []
     }
   }
@@ -29,21 +32,19 @@ export default class App extends Component {
   }
 
     componentDidMount() {
-    fetch('http://localhost:3001/api/v1/areas')
-      .then(response => response.json())
+    getAreas()
       .then(areas => {
         const areaPromises = areas.areas.map(area => {
-        return fetch('http://localhost:3001' + area.details)
-          .then(res => res.json())
+        return getListings(area)
           .then(data => {
             return {
               shortName: area.area,
               ...data
             }
           })
-          .catch(error => console.log(error))
+          .catch(error => this.state.error = error)
         })
-        Promise.all(areaPromises)
+        resolvePromises(areaPromises)
         .then(areaValues => {
           const listingsObj = areaValues.reduce((acc, area) => {
             acc[area.name] = area.listings
@@ -54,8 +55,7 @@ export default class App extends Component {
           let allListings = []
           let fetchedListings  = values.map(value => {
             let individualListing = value.map(areaListings => {
-              fetch('http://localhost:3001' + areaListings)
-              .then(response => response.json())
+              getIndividualListings(areaListings)
               .then(data => {
                 allListings.push(data)
                 this.setState({listings: allListings});
@@ -76,7 +76,11 @@ export default class App extends Component {
     }
 
     render() {
-      if (!this.state.areas || !this.state.listings.length) {
+      if (this.state.error) {
+        return (
+          <Error errorMessage={this.state.error} />
+        )
+      } else if (!this.state.areas || !this.state.listings.length) {
         return (
           <h1>LOADING . . .</h1>
           )
