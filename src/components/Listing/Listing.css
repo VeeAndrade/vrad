@@ -1,0 +1,64 @@
+.single-listing-section {
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  padding-top: 30px;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-listing-heading {
+  font-size: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.images-section {
+  height: 50%;
+  width: 90%;
+  overflow: scroll;
+  white-space:nowrap;
+  padding: 5px;
+}
+
+.listing-image {
+  margin: 10px;
+  height: 100%;
+  width: 50%;
+  display: inline-block
+}
+
+.description-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 60px;
+
+}
+
+.description-details {
+  font-size: 1.2em;
+  align-self: center;
+  margin-top: 15px;
+  padding: 5px;
+  background-color: #007EA7;
+  width: 90%;
+  height: 35%;
+}
+
+.buttons-container {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.favorite-button {
+  width: 20%;
+  margin-right: 30px;
+}
+
+.remove-from-favorites {
+  width: 20%;
+}
