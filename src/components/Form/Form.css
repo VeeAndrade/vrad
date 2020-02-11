@@ -45,13 +45,17 @@
 }
 
 .continue-btn {
+  display: flex;
   color: #fff;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
   margin-top: 8%;
   height: 10%;
   width: 72%;
   border-radius: 5px;
   background-color: #003459;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .continue-btn:hover {

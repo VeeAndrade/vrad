@@ -35,10 +35,6 @@ class Areas extends Component {
     } else {
       return(
         <main className='main-areas'>
-          <section className='heading-container-wrapper'>
-            <h2 className='heading'>Denver Areas</h2>
-            <NavLink className='signout-btn' to='/'>Signout</NavLink>
-          </section>
           <section className='card-container'>
             {this.displayAreas()}
           </section>
