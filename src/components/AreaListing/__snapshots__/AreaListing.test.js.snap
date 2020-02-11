@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AreaListing should match the snapshot with all the data passed in correctly 1`] = `
+<article
+  className="area-listing-section"
+  key="3"
+>
+  <header
+    className="area-listing-name"
+  >
+    Hip RiNo Party Spot
+  </header>
+  <img
+    className="area-listing-image"
+    src="/images/3_a.jpg"
+  />
+  <button
+    className="view-listings-link-button"
+  >
+    <Link
+      className="view-listing-link"
+      to="/areas/590/listings/3"
+    >
+      View This Listing
+    </Link>
+  </button>
+</article>
+`;
