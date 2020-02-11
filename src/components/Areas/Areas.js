@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import AreaCard from '../AreaCard/AreaCard';
+import PropTypes from 'prop-types'
 import './Areas.css'
 
 class Areas extends Component {
   constructor() {
     super()
     this.state = {
-      areas: '',
-      listings: '',
-      userFavorites: ''
-    }
+      areas: ''}
   }
 
   componentDidMount() {
@@ -46,6 +44,10 @@ class Areas extends Component {
       )
     }
   }
+}
+
+Component.propTypes = {
+  areas: PropTypes.array
 }
 
 export default Areas;
