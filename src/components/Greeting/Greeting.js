@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import './Greeting.css';
 
 const Greeting = ({ user, purpose, userFavorites }) => {
@@ -18,7 +19,12 @@ const Greeting = ({ user, purpose, userFavorites }) => {
         </p>
       </article>
     )}
+  }
 
+  Greeting.propTypes = {
+    user: PropTypes.string,
+    purpose: PropTypes.string,
+    userFavorites: PropTypes.array
   }
 
 export default Greeting;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import './Form.css'
 
 
@@ -55,10 +56,21 @@ export default class Form extends Component {
           <option value='Other'>Other</option>
         </select>
         </section>
-        <Link className='continue-btn' onClick={this.validateUser} to='/areas'>
+        <Link className='continue-btn' onClick={this.validateUser} to={() => {
+          if (!this.state.user || !this.state.purpose || !this.state.email) {
+            return '/'
+          } else {
+            return '/areas'
+          }
+        }}>
           Continue
         </Link>
       </form>
     )
   }
+}
+
+Component.propTypes = {
+  user: PropTypes.string,
+  purpose: PropTypes.string
 }

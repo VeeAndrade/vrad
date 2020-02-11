@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './AreaCard.css'
 
 const AreaCard = ({shortName, name, description, areaId, listings}) => {
@@ -14,6 +15,14 @@ const AreaCard = ({shortName, name, description, areaId, listings}) => {
       </aside>
     </section>
   )
+}
+
+AreaCard.propTypes = {
+  shortName: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  areaId: PropTypes.number,
+  listings: PropTypes.array,
 }
 
 export default AreaCard;

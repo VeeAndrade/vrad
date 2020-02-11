@@ -9,6 +9,7 @@ import ListingsContainer from '../ListingsContainer/ListingsContainer'
 import Greeting from '../Greeting/Greeting';
 import Error from '../Error/Error';
 import FavoriteListing from '../FavoriteListing/FavoriteListing';
+import PropTypes from 'prop-types'
 import { getAreas, getListings, resolvePromises, getIndividualListings } from '../../apiCalls'
 
 
@@ -110,4 +111,13 @@ export default class App extends Component {
       </main>
     )};
   }
+}
+
+Component.propTypes = {
+  user: PropTypes.string,
+  purpose: PropTypes.string,
+  areas: PropTypes.array,
+  listings: PropTypes.array,
+  error: PropTypes.bool,
+  userFavorites: PropTypes.array
 }
