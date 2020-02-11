@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Greeting.css';
 
 const Greeting = ({ user, purpose, userFavorites }) => {
@@ -8,7 +8,10 @@ const Greeting = ({ user, purpose, userFavorites }) => {
   } else {
     return(
       <article className='user-info'>
-        <Link to='/favorites'>{userFavorites.length}</Link>
+        <section className='heading-container-wrapper'>
+          <NavLink className='signout-btn' to='/'>Signout</NavLink>
+          <NavLink to='/favorites'>{userFavorites.length}</NavLink>
+        </section>
         <p>
           Hello, {user}. You've chosen {purpose} as your
           reason for being here!

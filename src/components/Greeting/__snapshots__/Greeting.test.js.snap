@@ -4,11 +4,21 @@ exports[`Greeting should match the snapshot with all the data passed in correctl
 <article
   className="user-info"
 >
-  <Link
-    to="/favorites"
+  <section
+    className="heading-container-wrapper"
   >
-    1
-  </Link>
+    <NavLink
+      className="signout-btn"
+      to="/"
+    >
+      Signout
+    </NavLink>
+    <NavLink
+      to="/favorites"
+    >
+      1
+    </NavLink>
+  </section>
   <p>
     Hello, 
     VEE
