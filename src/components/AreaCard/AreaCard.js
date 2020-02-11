@@ -8,7 +8,7 @@ const AreaCard = ({shortName, name, description, areaId, listings}) => {
       <h3 className='area-card-name'>{name}
         <p className='area-card-shortName'>({shortName})</p>
       </h3>
-      <img src='https://res.cloudinary.com/simpleview/image/upload/v1476736550/clients/denver/denver_art_museum_night_f3f50e4f-e62b-4fd7-b81c-e08fd97ad0a2.jpg' className='area-card-image' alt={`Pictures of a rental in ${shortName}`}/>
+      <img src={process.env.PUBLIC_URL + `/images/den-pic-${areaId}.jpg`} className='area-card-image' alt={`Pictures of a rental in ${shortName}`}/>
       <aside className='area-card-description'>{description}<Link className='view-listings-button' listings={listings}
       to={`/areas/${areaId}/listings`}>View Listings</Link>
       </aside>
