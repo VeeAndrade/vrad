@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Listing = (props) => {
   const findIndexOfFavorite = (favoriteId) => {
@@ -51,5 +52,11 @@ const Listing = (props) => {
   }
 }
 
+Listing.propTypes = {
+  matched: PropTypes.object,
+  userFavorites: PropTypes.array,
+  removeFromFavorites: PropTypes.func,
+  addToFavorites: PropTypes.func
+}
 
 export default Listing;
