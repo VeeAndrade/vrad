@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Denver Endeavors
+Denver Endeavors is an app that facilitates vacation rentals around Denver, Co.
 
-## Available Scripts
+### Introduction
+This was a paired project, and the second project of Module 3. It's main focus was to work with asynchronous JavaScript and using nested `fetch` calls.
 
-In the project directory, you can run:
+### Screenshots
+![screenshot 1](https://user-images.githubusercontent.com/53405028/74109489-15dd3f00-4b41-11ea-9da8-007a78ca8d82.png)
 
-### `npm start`
+### Directions for Use
+- On page load you will see a login screen requiring the user to input their name, email, and select their reason for using the app (i.e. 'Business', 'Recreational', or 'Other')
+- After selecting the `Continue` button, four cards are displayed, each correlating to a different neighborhood in Denver.
+- The user can then select the `View Listings` button to see all available listings in the selected area.
+- There is a `View This Listing` on each displayed card that will take you to a page that has more pictures of that particular listing as well as necessary details. It also includes a button that can be used to favorite a particular listing.
+- The favorite listings page can be viewed by clicking on the button in the header. The number on the button describes how many listings a user has in their favorites.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Project Learning Goals  
+1. Write squeaky clean, well refactored code using ES6 syntax.
+2. Make informed design decisions to create a user-friendly application.
+3. Keep state based components to a minimum and leverage more functional components.
+4. Use a modular architecture for your application file structure.
+5. Think deeply about React Lifecycle Methods.
+6. Become familiar with promises, nested fetch requests, and handling the UI based on acceptance of data.
+7. Become familiar with routing and how to handle dynamic routes.
+8. Use propTypes for every component receiving props.
+9. Write tests for React components and some asynchronous functionality.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Technologies Used
+- HTML
+- CSS
+- React
+- Jest
+- Enzyme
+- NPM
+- Git
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### How to run on a local machine
+1. shut down any live servers you currently have running (`control` + `c`)
+2. clone down this repo to desired location
+3. cd to the directory where you cloned the repo
+4. run `npm install`
+5. clone down [this repo link](https://github.com/turingschool/VRAD-API "API Data") to a directory outside of the directory from the first repo you cloned.
+6. repeat steps 3 & 4 for this new repo
+7. clone down the image files from [this repo link](https://github.com/turingschool/VRAD-Assets "App Images") and extract the `image` folder and place it into the `public` folder within the app's directory.
+8. cd back to the main app's root directory and run `npm start`
+9. cd to the API Data root directory and run `npm start`
+10. you should now be able to use the Denver Endeavors app
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### This project was created by:
+Veronica Andrade https://github.com/VeeAndrade<br>
+Johnny Cassidy https://github.com/pJanks
