@@ -1,4 +1,18 @@
 .user-info {
   width: 100%;
-  border: solid 2px orange
 }
+
+.heading-container-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.favorites-nav-link {
+  
+}
+
+.signout-btn {
+  background-color: #fff;
+  color: #007EA7;
+}
+

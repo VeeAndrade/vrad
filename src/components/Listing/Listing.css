@@ -3,7 +3,6 @@
   background-color: #fff;
   display: flex;
   padding-top: 30px;
-  /* justify-content: center; */
   flex-direction: column;
   align-items: center;
 }
@@ -41,7 +40,8 @@
   align-self: center;
   margin-top: 15px;
   padding: 5px;
-  background-color: #007EA7;
+  background-color: lightslategray;
+  color: #003459;
   width: 90%;
   height: 35%;
 }
@@ -52,13 +52,16 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+
 }
 
 .favorite-button {
   width: 20%;
   margin-right: 30px;
+  cursor: pointer
 }
 
 .remove-from-favorites {
   width: 20%;
+  cursor: pointer
 }

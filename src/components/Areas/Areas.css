@@ -1,7 +1,5 @@
 .main-areas {
-
   height: 100%;
-
 }
 
 .heading-container-wrapper {
@@ -13,21 +11,15 @@
 
 .card-container {
   display: grid;
-  height: 70%;
+  height: 60%;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
   justify-items: center;
   text-align: left;
   margin-top: 2%;
 }
 
-.signout-btn {
-background-color: #fff;
-color: #007EA7;
-}
-
 .heading {
-  /* border: solid 2px; */
   width: 100%;
   background-color: #fff;
   color: #007EA7;
