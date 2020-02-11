@@ -1,5 +1,8 @@
+
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Listing.css'
+
 
 const Listing = (props) => {
   const findIndexOfFavorite = (favoriteId) => {
@@ -26,13 +29,14 @@ const Listing = (props) => {
   {
     let id = props.matched.listing_id.toString()
     return (
-    <article>
-      <h1>{props.matched.name}</h1>
+    <article className='single-listing-section'>
+      <h1 className='single-listing-heading'>{props.matched.name}</h1>
       <section className='images-section'>
-        <img src={process.env.PUBLIC_URL + `/images/${id}_a.jpg`} />
-        <img src={process.env.PUBLIC_URL + `/images/${id}_b.jpg`} />
-        <img src={process.env.PUBLIC_URL + `/images/${id}_c.jpg`} />
+        <img className='listing-image' src={process.env.PUBLIC_URL + `/images/${id}_a.jpg`} />
+        <img className='listing-image' src={process.env.PUBLIC_URL + `/images/${id}_b.jpg`} />
+        <img className='listing-image' src={process.env.PUBLIC_URL + `/images/${id}_c.jpg`} />
       </section>
+      <section className='description-details'>
       <ul><p>This place includes:</p>
         {props.matched.details.features.map(feature => {
           return (<li key={feature}>{feature}</li>)
@@ -45,8 +49,11 @@ const Listing = (props) => {
         <p>Baths: {props.matched.details.baths}</p>
         <p>Cost Per Night: ${props.matched.details.cost_per_night}</p>
       </section>
-      <button onClick={() => props.addToFavorites(props.matched)}>Favorite</button>
-      <button name={parseInt(id)} onClick={(event) => findIndexOfFavorite(event.target.name)}>Remove From Favorites</button>
+      <section className='buttons-container'>
+        <button className='favorite-button' onClick={() => props.addToFavorites(props.matched)}>Favorite</button>
+        <button className='remove-from-favorites' name={parseInt(id)} onClick={(event) => findIndexOfFavorite(event.target.name)}>Remove From Favorites</button>
+      </section>
+      </section>
     </article>
   )
   }
