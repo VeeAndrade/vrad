@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 import './AreaListing.css'
 
 const AreaListing = ({ listings, id }) => {
@@ -16,5 +17,10 @@ const AreaListing = ({ listings, id }) => {
     )
   })
 };
+
+AreaListing.propTypes = {
+  listings: PropTypes.array,
+  id: PropTypes.string
+}
 
 export default AreaListing;
