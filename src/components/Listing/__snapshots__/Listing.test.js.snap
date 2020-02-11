@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Listing should match the snapshot with all the data passed in correctly 1`] = `
+<article>
+  <h1>
+    Hip RiNo Party Spot
+  </h1>
+  <section
+    className="images-section"
+  >
+    <img
+      src="/images/3_a.jpg"
+    />
+    <img
+      src="/images/3_b.jpg"
+    />
+    <img
+      src="/images/3_c.jpg"
+    />
+  </section>
+  <ul>
+    <p>
+      This place includes:
+    </p>
+    <li
+      key="hot tub"
+    >
+      hot tub
+    </li>
+    <li
+      key="espresso machine"
+    >
+      espresso machine
+    </li>
+  </ul>
+  <section
+    className="description-section"
+  >
+    <p>
+      Address: 
+      2250 Lawrence St
+    </p>
+    <p>
+      Zip Code: 
+      80205
+    </p>
+    <p>
+      Beds: 
+      3
+    </p>
+    <p>
+      Baths: 
+      2.5
+    </p>
+    <p>
+      Cost Per Night: $
+      420
+    </p>
+  </section>
+  <button
+    onClick={[Function]}
+  >
+    Favorite
+  </button>
+  <button
+    name={3}
+    onClick={[Function]}
+  >
+    Remove From Favorites
+  </button>
+</article>
+`;
