@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoriteListing should match the snapshot with all the data passed in correctly 1`] = `
+<article>
+  <h1>
+    hey
+  </h1>
+  <section
+    className="images-section"
+  >
+    <img
+      src="/images/3_a.jpg"
+    />
+    <img
+      src="/images/3_b.jpg"
+    />
+    <img
+      src="/images/3_c.jpg"
+    />
+  </section>
+  <button
+    name={3}
+    onClick={[Function]}
+  >
+    Remove From Favorites
+  </button>
+</article>
+`;

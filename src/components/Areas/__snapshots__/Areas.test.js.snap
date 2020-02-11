@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Areas should match the areas snapshot 1`] = `
+<main
+  className="main-areas"
+>
+  <section
+    className="heading-container-wrapper"
+  >
+    <h2
+      className="heading"
+    >
+      Denver Areas
+    </h2>
+    <NavLink
+      className="signout-btn"
+      to="/"
+    >
+      Signout
+    </NavLink>
+  </section>
+  <section
+    className="card-container"
+  >
+    <AreaCard />
+    <AreaCard />
+    <AreaCard />
+    <AreaCard />
+  </section>
+</main>
+`;

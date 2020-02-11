@@ -1,10 +1,10 @@
 import React from 'react';
 import  { shallow } from 'enzyme';
-import FavoriteListing from './FavoriteListing';
+import AreaCard from './AreaCard';
 
-describe('FavoriteListing', () => {
-  it('should match the snapshot with all the data passed in correctly', () => {
-    const mockFav = {
+describe('AreaCard', () => {
+  it('should match the snapshot with all the data passed in correctly',() => {
+    const mockListings = {
       listing_id: 3,
       area_id: 590,
       name: "Hip RiNo Party Spot",
@@ -28,11 +28,13 @@ describe('FavoriteListing', () => {
       area: "rino",
       db_connect: 834470
     }
-    const wrapper = shallow(<FavoriteListing 
-    userFavorites={[mockFav]}
-    removeFromFavorites={jest.fn()}
+    const wrapper = shallow(<AreaCard 
+    shortName='Rino'
+    name='Johnnys Place'
+    description='The sickest place in the whole wide world'
+    areaId={590} 
+    listings={[mockListings]}
     />)
-
     expect(wrapper).toMatchSnapshot();
-  });
+  })
 })

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AreaCard should match the snapshot with all the data passed in correctly 1`] = `
+<section
+  className="area-card-section"
+>
+  <h3
+    className="area-card-name"
+  >
+    Johnnys Place
+    <p
+      className="area-card-shortName"
+    >
+      (
+      Rino
+      )
+    </p>
+  </h3>
+  <img
+    alt="Pictures of a rental in Rino"
+    className="area-card-image"
+    src="https://res.cloudinary.com/simpleview/image/upload/v1476736550/clients/denver/denver_art_museum_night_f3f50e4f-e62b-4fd7-b81c-e08fd97ad0a2.jpg"
+  />
+  <aside
+    className="area-card-description"
+  >
+    The sickest place in the whole wide world
+    <Link
+      className="view-listings-button"
+      listings={
+        Array [
+          Object {
+            "address": Object {
+              "street": "2250 Lawrence St",
+              "zip": "80205",
+            },
+            "area": "rino",
+            "area_id": 590,
+            "db_connect": 834470,
+            "details": Object {
+              "baths": 2.5,
+              "beds": 3,
+              "cost_per_night": 420,
+              "features": Array [
+                "hot tub",
+                "espresso machine",
+              ],
+              "neighborhood_id": 5124122,
+              "seller_source": "91jss1",
+              "superhost": true,
+            },
+            "dev_id": "u4gh2j",
+            "listing_id": 3,
+            "name": "Hip RiNo Party Spot",
+          },
+        ]
+      }
+      to="/areas/590/listings"
+    >
+      View Listings
+    </Link>
+  </aside>
+</section>
+`;

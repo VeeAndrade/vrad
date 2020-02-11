@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Greeting should match the snapshot with all the data passed in correctly 1`] = `
+<article
+  className="user-info"
+>
+  <Link
+    to="/favorites"
+  >
+    1
+  </Link>
+  <p>
+    Hello, 
+    VEE
+    . You've chosen 
+    Vacation
+     as your reason for being here!
+  </p>
+</article>
+`;
