@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const FavoriteListing = (props) => {
-
   const findIndexOfFavorite = (favoriteId) => {
     let fav = props.userFavorites.find((favorite) => {
       return favorite.listing_id === parseInt(favoriteId)
@@ -30,19 +30,9 @@ const FavoriteListing = (props) => {
   }
 }
 
+FavoriteListing.propTypes = {
+  userFavorites: PropTypes.array,
+  removeFromFavorites: PropTypes.func
+}
+
 export default FavoriteListing;
-
-
-
-// <ul><p>This place includes:</p>
-// // {props.matched.details.features.map(feature => {
-//   //   return (<li key={feature}>{feature}</li>)
-//   // })}
-//   </ul>
-//   <section className='description-section'>
-//   <p>Address: {props.matched.address.street}</p>
-//   <p>Zip Code: {props.matched.address.zip}</p>
-//   <p>Beds: {props.matched.details.beds}</p>
-//   <p>Baths: {props.matched.details.baths}</p>
-//   <p>Cost Per Night: ${props.matched.details.cost_per_night}</p>
-//   </section>
