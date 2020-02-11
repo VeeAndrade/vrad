@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<form
+  className="user-input-form"
+>
+  <input
+    className="username-input"
+    name="user"
+    onChange={[Function]}
+    placeholder="Name"
+    type="text"
+  />
+  <input
+    className="useremail-input"
+    name="email"
+    onChange={[Function]}
+    placeholder="Email"
+    type="text"
+  />
+  <section
+    className="purpose-section"
+  >
+    <label
+      className="purpose-label"
+    >
+      Reason for trip: 
+    </label>
+    <select
+      className="purpose-selection"
+      name="purpose"
+      onChange={[Function]}
+    >
+      <option
+        value=""
+      >
+        Select one--
+      </option>
+      <option
+        value="Vacation"
+      >
+        Vacation
+      </option>
+      <option
+        value="Business"
+      >
+        Business
+      </option>
+      <option
+        value="Other"
+      >
+        Other
+      </option>
+    </select>
+  </section>
+  <Link
+    className="continue-btn"
+    onClick={[Function]}
+    to="/areas"
+  >
+    Continue
+  </Link>
+</form>
+`;
