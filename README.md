@@ -2,7 +2,7 @@
 Denver Endeavors is an app that facilitates vacation rentals around Denver, Co.
 
 ### Introduction
-This was a paired project, and the second project of Module 3. It's main focus was to work with asynchronous JavaScript and using nested `fetch` calls.
+This was a paired project, and the second project of Module 3. It's main focus was to work with asynchronous JavaScript and using nested `fetch` calls.The objectives of this project was to keep state based components to a minimum and leverage more functional components, and become familiar with promises, nested fetch request and handle UI based on acceptance of data. 
 
 ### Screenshots
 ![screenshot 1](./public/images/VRAD-screenshot.png)
