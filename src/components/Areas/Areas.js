@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import AreaCard from '../AreaCard/AreaCard';
 import PropTypes from 'prop-types'
 import './Areas.css'
