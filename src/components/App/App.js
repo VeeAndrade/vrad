@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import Form from '../Form/Form'
-import Areas from '../Areas/Areas'
-import AreaListing from '../AreaListing/AreaListing';
+import Form from '../Form/Form';
+import Areas from '../Areas/Areas';
 import Listing from '../Listing/Listing';
-import ListingsContainer from '../ListingsContainer/ListingsContainer'
+import ListingsContainer from '../ListingsContainer/ListingsContainer';
 import Greeting from '../Greeting/Greeting';
+import LoginHeading from '../LoginHeading/LoginHeading';
 import Error from '../Error/Error';
 import FavoriteListing from '../FavoriteListing/FavoriteListing';
-import PropTypes from 'prop-types'
-import { getAreas, getListings, resolvePromises, getIndividualListings } from '../../apiCalls'
+import PropTypes from 'prop-types';
+import { getAreas, getListings, resolvePromises, getIndividualListings } from '../../apiCalls';
 
 
 export default class App extends Component {
@@ -43,7 +43,7 @@ export default class App extends Component {
               ...data
             }
           })
-          .catch(error => this.state.error = error)
+          .catch(error => this.setState({error: error}))
         })
         resolvePromises(areaPromises)
         .then(areaValues => {
@@ -88,11 +88,7 @@ export default class App extends Component {
         } else {
     return (
       <main className='App-main'>
-        <header className='App-header'>
-          <div className='icon'></div>
-          <h1 className='App-heading'>Denver Endeavours</h1>
-        </header>
-        <Greeting user={this.state.user} purpose={this.state.purpose} userFavorites={this.state.userFavorites} />
+        {!this.state.user ? <LoginHeading /> : <Greeting user={this.state.user} purpose={this.state.purpose} userFavorites={this.state.userFavorites} updateUserInfo={this.updateUserInfo}/>}
         <Route exact path='/' render={() => <Form updateUserInfo={this.updateUserInfo} />} />
         <Route exact path='/areas' render={() => <Areas areasData={this.state.areas} />}/>
         <Route exact path='/areas/:area_id/listings' render={({match}) => {
