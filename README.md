@@ -5,7 +5,9 @@ Denver Endeavors is an app that facilitates vacation rentals around Denver, Co.
 This was a paired project, and the second project of Module 3. It's main focus was to work with asynchronous JavaScript and using nested `fetch` calls.The objectives of this project was to keep state based components to a minimum and leverage more functional components, and become familiar with promises, nested fetch request and handle UI based on acceptance of data. 
 
 ### Screenshots
-![screenshot 1](./public/images/VRAD-screenshot.png)
+<img width="1440" alt="Screen Shot 2020-03-13 at 5 39 42 PM" src="https://user-images.githubusercontent.com/51575613/76669601-0e4ef280-6552-11ea-8620-0a8e3e178b76.png">
+<img width="1440" alt="Screen Shot 2020-03-13 at 5 41 13 PM" src="https://user-images.githubusercontent.com/51575613/76669607-13ac3d00-6552-11ea-9254-ddfaf043fa93.png">
+<img width="1440" alt="Screen Shot 2020-03-13 at 5 41 39 PM" src="https://user-images.githubusercontent.com/51575613/76669615-160e9700-6552-11ea-8bf5-aa61c0df88be.png">
 
 ### Directions for Use
 - On page load you will see a login screen requiring the user to input their name, email, and select their reason for using the app (i.e. 'Business', 'Recreational', or 'Other')
