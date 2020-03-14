@@ -42,10 +42,11 @@ export default class Form extends Component {
         />
         <input
           className = 'useremail-input'
-          type='text'
+          type='email'
           placeholder='Email'
           name='email'
           onChange={this.handleChange}
+          required
         />
         <section className='purpose-section'>
         <label className='purpose-label'>Reason for trip: </label>

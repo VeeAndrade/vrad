@@ -10,9 +10,10 @@ const AreaCard = ({shortName, name, description, areaId, listings}) => {
         <p className='area-card-shortName'>({shortName})</p>
       </h3>
       <img src={process.env.PUBLIC_URL + `/images/den-pic-${areaId}.jpg`} className='area-card-image' alt={`Pictures of a rental in ${shortName}`}/>
-      <aside className='area-card-description'>{description}<Link className='view-listings-button' listings={listings}
-      to={`/areas/${areaId}/listings`}>View Listings</Link>
-      </aside>
+      <section className='describe-sect'>
+        <aside className='area-card-description'>{description}</aside>
+        <Link className='view-listings-button' listings={listings} to={`/areas/${areaId}/listings`}>View Listings</Link>
+      </section>
     </section>
   )
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import './FavoriteListing.css';
+import AreaListing from '../AreaListing/AreaListing';
 import PropTypes from 'prop-types'
 
 const FavoriteListing = (props) => {
@@ -14,19 +16,22 @@ const FavoriteListing = (props) => {
   if(!props.userFavorites.length){
     return <h1>You have no userFavorites</h1>
   } else {
-    return props.userFavorites.map(favorite => {
+    let favoriteCards = props.userFavorites.map(favorite => {
       return (
-        <article>
-        <h1>{'hey'}</h1>
-        <section className='images-section'>
-          <img src={process.env.PUBLIC_URL + `/images/${favorite.listing_id}_a.jpg`} />
-          <img src={process.env.PUBLIC_URL + `/images/${favorite.listing_id}_b.jpg`} />
-          <img src={process.env.PUBLIC_URL + `/images/${favorite.listing_id}_c.jpg`} />
+        <article className='fav-card'>
+        <h2 className='fav-heading'>{favorite.name}</h2>
+        <section className='fav-images-section'>
+          <img alt='area listing' className='fav-image' src={process.env.PUBLIC_URL + `/images/${favorite.listing_id}_a.jpg`} />
         </section>
-        <button name={favorite.listing_id} onClick={(event) => findIndexOfFavorite(event.target.name)}>Remove From Favorites</button>
+        <button name={favorite.listing_id} className='remove-fav-btn' onClick={(event) => findIndexOfFavorite(event.target.name)}>Remove From Favorites</button>
         </article>
       )
     })
+    return (
+      <section className='fav-section'>
+        {favoriteCards}
+      </section>
+    )
   }
 }
 
