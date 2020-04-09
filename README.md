@@ -1,4 +1,4 @@
-# Denver Endeavors
+# Denver Rentals
 Denver Endeavors is an app that facilitates vacation rentals around Denver, Co.
 
 ### Introduction
