@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/vrad/static/css/main.cd04225c.chunk.css",
+    "main.js": "/vrad/static/js/main.136de543.chunk.js",
+    "main.js.map": "/vrad/static/js/main.136de543.chunk.js.map",
+    "runtime-main.js": "/vrad/static/js/runtime-main.0593efba.js",
+    "runtime-main.js.map": "/vrad/static/js/runtime-main.0593efba.js.map",
+    "static/js/2.760ed324.chunk.js": "/vrad/static/js/2.760ed324.chunk.js",
+    "static/js/2.760ed324.chunk.js.map": "/vrad/static/js/2.760ed324.chunk.js.map",
+    "index.html": "/vrad/index.html",
+    "precache-manifest.8b63d049221960ca637aa7aba0bad5c8.js": "/vrad/precache-manifest.8b63d049221960ca637aa7aba0bad5c8.js",
+    "service-worker.js": "/vrad/service-worker.js",
+    "static/css/main.cd04225c.chunk.css.map": "/vrad/static/css/main.cd04225c.chunk.css.map",
+    "static/js/2.760ed324.chunk.js.LICENSE.txt": "/vrad/static/js/2.760ed324.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/vrad/static/media/other-background.028aba16.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0593efba.js",
+    "static/js/2.760ed324.chunk.js",
+    "static/css/main.cd04225c.chunk.css",
+    "static/js/main.136de543.chunk.js"
+  ]
+}
